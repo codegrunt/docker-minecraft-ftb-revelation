@@ -1,15 +1,15 @@
 FROM java:8
 
-ENV FTB_INFINITY_URL https://www.feed-the-beast.com/projects/ftb-infinity-evolved/files/2320899/download
-ENV LAUNCHWRAPPER net/minecraft/launchwrapper/1.12/launchwrapper-1.12.jar
+ENV FTB_INFINITY_URL https://media.forgecdn.net/files/2484/486/FTBInfinityServer_3.0.2.zip
+ENV DYNMAP_URL https://minecraft.curseforge.com/projects/dynmapforge/files/2307078/download
+ENV DYNMAP_JAR Dynmap-2.3-forge-1.7.10.jar
 
-RUN curl -SL $FTB_INFINITY_URL -o /tmp/infinity.zip && \
-    unzip /tmp/infinity.zip -d /opt/minecraft && \
-    mkdir -p /opt/minecraft/$(dirname libraries/${LAUNCHWRAPPER}) && \
-    curl -S https://libraries.minecraft.net/$LAUNCHWRAPPER -o /opt/minecraft/libraries/$LAUNCHWRAPPER && \
-    curl -SL https://minecraft.curseforge.com/projects/dynmapforge/files/2307078/download -o /opt/minecraft/mods/Dynmap-2.3-forge-1.7.10.jar && \
-    find /opt/minecraft -name "*.log" -exec rm -f {} \; && \
-    rm -rf /opt/minecraft/ops.* /opt/minecraft/whitelist.* /opt/minecraft/logs/* /tmp/*
+RUN curl -SL $FTB_INFINITY_URL -o /tmp/infinity.zip \
+    && mkdir -p /opt/minecraft \
+    && unzip /tmp/infinity.zip -d /opt/minecraft \
+    && curl -SL $DYNMAP_URL -o /opt/minecraft/mods/${DYNMAP_JAR} \
+    && find /opt/minecraft -name "*.log" -exec rm -f {} \; \
+    && rm -rf /opt/minecraft/ops.* /opt/minecraft/whitelist.* /opt/minecraft/logs/* /tmp/*
 
 ADD eula.txt /opt/minecraft/eula.txt
 
