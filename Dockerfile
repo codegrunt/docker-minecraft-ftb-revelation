@@ -1,8 +1,8 @@
 FROM java:8
 
-ENV FTB_INFINITY_URL https://media.forgecdn.net/files/2484/486/FTBInfinityServer_3.0.2.zip
-ENV DYNMAP_URL https://minecraft.curseforge.com/projects/dynmapforge/files/2307078/download
-ENV DYNMAP_JAR Dynmap-2.3-forge-1.7.10.jar
+ENV FTB_INFINITY_URL https://ftb.forgecdn.net/FTB2/modpacks/FTBInfinity/3_0_2/FTBInfinityServer.zip
+ENV DYNMAP_URL https://minecraft.curseforge.com/projects/dynmapforge/files/2645936/download
+ENV DYNMAP_JAR Dynmap-3.0-beta-3-forge-1.12.2.jar
 
 RUN curl -SL $FTB_INFINITY_URL -o /tmp/infinity.zip \
     && mkdir -p /opt/minecraft \
