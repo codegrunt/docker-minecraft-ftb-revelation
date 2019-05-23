@@ -1,11 +1,11 @@
-docker-minecraft-ftb-infinity
+docker-minecraft-ftb-revelation
 =============================
 
-Minecraft FTB infinity server with dynmap included.
+Minecraft FTB revelation server with dynmap and chunk pregeneration included.
 
 To run the server:
 
-  docker run -itd -v "$pwd/data:/opt/minecraft/world" -p "25565:25565" -p "80:8123" jurjean/minecraft-ftb-infinity
+  docker run -itd -v "$pwd/data:/opt/minecraft/world" -p "25565:25565" -p "8123:8123" talannvor/ftb-revelation-server
 
 For Synology NAS do the following:
   Add a volume
