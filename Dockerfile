@@ -15,14 +15,15 @@ RUN curl -SL $FTB_REVELATION_URL -o /tmp/revelation.zip \
     && curl -SL $CHUNK_PREGEN_URL -o /opt/minecraft/mods/${CHUNK_PREGEN_JAR} \
     && find /opt/minecraft -name "*.log" -exec rm -f {} \; \
     && rm -rf /opt/minecraft/ops.* /opt/minecraft/whitelist.* /opt/minecraft/logs/* /tmp/*
+    && b
 
 ADD eula.txt /opt/minecraft/eula.txt
 
 ENV MINECRAFT_VERSION 1.12.2
-ENV MINECRAFT_OPTS -server -Xms2048m -Xmx4096m -XX:MaxPermSize=256m -XX:+UseParNewGC -XX:+UseConcMarkSweepGC
-ENV MINECRAFT_STARTUP_JAR FTBserver-1.12.2-14.23.5.2836-universal.jar
 
 VOLUME /opt/minecraft/world
+VOLUME /opt/minecraft/backups
+VOLUME /opt/minecraft/dynmap
 
 EXPOSE 25565
 EXPOSE 8123
