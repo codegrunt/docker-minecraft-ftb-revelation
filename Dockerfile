@@ -15,7 +15,6 @@ RUN curl -SL $FTB_REVELATION_URL -o /tmp/revelation.zip \
     && curl -SL $CHUNK_PREGEN_URL -o /opt/minecraft/mods/${CHUNK_PREGEN_JAR} \
     && find /opt/minecraft -name "*.log" -exec rm -f {} \; \
     && rm -rf /opt/minecraft/ops.* /opt/minecraft/whitelist.* /opt/minecraft/logs/* /tmp/*
-    && b
 
 ADD eula.txt /opt/minecraft/eula.txt
 COPY server.properties /opt/minecraft/server.properties
