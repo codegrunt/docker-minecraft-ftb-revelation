@@ -8,8 +8,8 @@ To run the server:
   docker run -itd -v "$pwd/data:/opt/minecraft/world" -p "25565:25565" -p "8123:8123" talannvor/ftb-revelation-server
 
 For Synology NAS do the following:
-  Add a volume
-  Use this volume when starting the container and mount it to /opt/minecraft/world
+  Add a 3 volumes
+  Use one volume each when starting the container and mount it to /opt/minecraft/world, /opt/minecraft/backups, and /opt/minecraft/dynmap.
   Check the ports, usually "automatic" is a good idea
   Start the container
   Go to "Details" to check which ports are used:
