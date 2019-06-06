@@ -18,6 +18,7 @@ RUN curl -SL $FTB_REVELATION_URL -o /tmp/revelation.zip \
     && b
 
 ADD eula.txt /opt/minecraft/eula.txt
+COPY server.properties /opt/minecraft/server.properties
 
 ENV MINECRAFT_VERSION 1.12.2
 
