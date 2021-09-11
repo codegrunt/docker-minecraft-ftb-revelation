@@ -1,6 +1,6 @@
 FROM java:8
 
-ENV FTB_REVELATION_URL https://ftb.forgecdn.net/FTB2/modpacks/FTBRevelation/3_0_1/FTBRevelationServer.zip
+ENV FTB_REVELATION_URL https://api.modpacks.ch/public/modpack/35/2059/server/linux
 ENV DYNMAP_URL https://minecraft.curseforge.com/projects/dynmapforge/files/2645936/download
 ENV DYNMAP_JAR Dynmap-3.0-beta-3-forge-1.12.2.jar
 ENV DYNMAP_BLOCKSCAN_JAR DynmapBlockScan-3.0-beta-1-forge-1.12.2.jar
